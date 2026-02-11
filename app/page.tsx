@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
 
-import { getPets } from "@/lib/data";
+import { getPets,Pet } from "@/lib/data";
 import SearchBar from "@/components/SearchBar";
 import StatusButton from "@/components/StatusButton";
 import DarkToggle from "@/components/DarkToggle";
@@ -35,7 +35,7 @@ export default async function Home({ searchParams }: Props) {
         <SearchBar />
 
         <div className="grid md:grid-cols-3 gap-6 mt-8">
-          {pets.map((pet) => (
+          {pets.map((pet:Pet) => (
             <div
               key={pet.id}
               className="bg-white dark:bg-gray-800 border rounded-lg overflow-hidden"
