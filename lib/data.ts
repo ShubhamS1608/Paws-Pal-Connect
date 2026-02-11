@@ -5,7 +5,7 @@ export type Pet = {
   species: string;
 };
 
-export async function getPets(species: string) {
+export async function getPets(species: string): Promise<Pet[]> {
   const res = await fetch(
     `https://dog.ceo/api/breeds/image/random/6?ts=${Date.now()}`,
     { cache: "no-store" }
